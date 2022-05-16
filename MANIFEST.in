@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include innoterra_phs *.css
+recursive-include innoterra_phs *.csv
+recursive-include innoterra_phs *.html
+recursive-include innoterra_phs *.ico
+recursive-include innoterra_phs *.js
+recursive-include innoterra_phs *.json
+recursive-include innoterra_phs *.md
+recursive-include innoterra_phs *.png
+recursive-include innoterra_phs *.py
+recursive-include innoterra_phs *.svg
+recursive-include innoterra_phs *.txt
+recursive-exclude innoterra_phs *.pyc
