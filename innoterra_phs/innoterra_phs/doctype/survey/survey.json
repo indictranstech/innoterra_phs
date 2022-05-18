@@ -1,0 +1,189 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-05-17 09:39:34.982666",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "name_of_farmer",
+  "father_name",
+  "contact_no",
+  "address",
+  "village",
+  "tehsil",
+  "district",
+  "column_break_4",
+  "date_of_survey",
+  "cc_name",
+  "land_holding_in_acre",
+  "current_sowing_detail_section",
+  "items",
+  "remarks_section",
+  "will_he_sell_his_agri_produce_to_us",
+  "is_farmer_having_milk_cattle",
+  "column_break_19",
+  "buffalos",
+  "cows",
+  "column_break_21",
+  "milk_in_ltr"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_of_survey",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Survey"
+  },
+  {
+   "fieldname": "name_of_farmer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Name of Farmer",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "name_of_farmer.father_name",
+   "fetch_if_empty": 1,
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "label": "Father Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name_of_farmer.mobile_no",
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "name_of_farmer.primary_address",
+   "fetch_if_empty": 1,
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "village",
+   "fieldtype": "Data",
+   "label": "Village",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tehsil",
+   "fieldtype": "Data",
+   "label": "Tehsil",
+   "read_only": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cc_name",
+   "fieldtype": "Link",
+   "label": "CC Name",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "land_holding_in_acre",
+   "fieldtype": "Data",
+   "label": "Land Holding in Acre"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "default": "0",
+   "fieldname": "will_he_sell_his_agri_produce_to_us",
+   "fieldtype": "Check",
+   "label": "Will he sell his agri produce to us"
+  },
+  {
+   "fieldname": "current_sowing_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Current Sowing Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_farmer_having_milk_cattle",
+   "fieldtype": "Check",
+   "label": "Is farmer having milk cattle"
+  },
+  {
+   "depends_on": "eval: doc.is_farmer_having_milk_cattle == 1",
+   "fieldname": "buffalos",
+   "fieldtype": "Data",
+   "label": "Buffalos"
+  },
+  {
+   "depends_on": "eval: doc.is_farmer_having_milk_cattle == 1",
+   "fieldname": "cows",
+   "fieldtype": "Data",
+   "label": "Cows"
+  },
+  {
+   "fieldname": "milk_in_ltr",
+   "fieldtype": "Data",
+   "label": "Milk in Ltr"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Form No",
+   "options": "SUR.YY.-.####"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Current Sowing Items",
+   "options": "Current Sowing Details",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-05-18 10:35:01.765463",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Survey",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

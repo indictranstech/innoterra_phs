@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-17 17:00:12.154805",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "current_sowing_acre",
+  "crop",
+  "variety",
+  "column_break_4",
+  "sowing_month",
+  "harvesting_months",
+  "approximate_yield_in_kgs",
+  "quantity_intended_for_sale"
+ ],
+ "fields": [
+  {
+   "fieldname": "current_sowing_acre",
+   "fieldtype": "Data",
+   "label": "Current Sowing Acre"
+  },
+  {
+   "fieldname": "crop",
+   "fieldtype": "Link",
+   "label": "Crop",
+   "options": "Item"
+  },
+  {
+   "fieldname": "variety",
+   "fieldtype": "Data",
+   "label": "Variety"
+  },
+  {
+   "fieldname": "sowing_month",
+   "fieldtype": "Select",
+   "label": "Sowing Month",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "approximate_yield_in_kgs",
+   "fieldtype": "Data",
+   "label": "Approximate Yield in KGS"
+  },
+  {
+   "fieldname": "quantity_intended_for_sale",
+   "fieldtype": "Data",
+   "label": "Quantity Intended for Sale"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "harvesting_months",
+   "fieldtype": "Select",
+   "label": "Harvesting Months",
+   "options": "\nJanuary\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-17 17:14:21.633155",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Current Sowing Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
