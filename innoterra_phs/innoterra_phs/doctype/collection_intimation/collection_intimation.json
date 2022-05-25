@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "farmer",
+  "territory",
   "collection_items"
  ],
  "fields": [
@@ -20,13 +21,20 @@
    "fieldname": "collection_items",
    "fieldtype": "Table",
    "label": "Collection Items",
-   "options": "Collection Details",
+   "options": "Collection Intimation Item",
    "reqd": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Territory",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-18 10:33:54.613721",
+ "modified": "2022-05-23 11:44:44.044543",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Collection Intimation",

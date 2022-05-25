@@ -1,0 +1,45 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-19 16:29:12.814072",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "revised_price",
+  "status",
+  "price_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "revised_price",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Revised Price"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "\nAccepted\nRejected"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-25 14:28:02.073887",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Revised Price Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

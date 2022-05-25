@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-18 15:10:12.767964",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "quality_inspection_parameter",
+  "uom",
+  "territory",
+  "item_name",
+  "benchmark",
+  "column_break_6",
+  "deductible_ratio_trigger",
+  "multiplier",
+  "offer_price",
+  "status",
+  "actual_quality_inspection",
+  "difference"
+ ],
+ "fields": [
+  {
+   "fieldname": "quality_inspection_parameter",
+   "fieldtype": "Link",
+   "label": "Quality Inspection Parameter",
+   "options": "Quality Inspection Parameter"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "benchmark",
+   "fieldtype": "Data",
+   "label": "Benchmark"
+  },
+  {
+   "fieldname": "deductible_ratio_trigger",
+   "fieldtype": "Select",
+   "label": "Deductible Ratio Trigger",
+   "options": "\nGreater Than\nLesser Than"
+  },
+  {
+   "fieldname": "multiplier",
+   "fieldtype": "Float",
+   "label": "Multiplier"
+  },
+  {
+   "fieldname": "offer_price",
+   "fieldtype": "Data",
+   "label": "Offer Price"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nAccepted\nRejected\nPending"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_quality_inspection",
+   "fieldtype": "Float",
+   "label": "Actual Quality Inspection"
+  },
+  {
+   "fieldname": "difference",
+   "fieldtype": "Float",
+   "label": "Difference"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-19 16:33:57.647119",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Quality Inspection Parameter Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
