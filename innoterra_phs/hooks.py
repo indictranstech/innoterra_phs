@@ -187,5 +187,21 @@ user_data_fields = [
 # For example: Role, Gender, etc.
 # translated_search_doctypes = []
 
+doctype_js = {
+	"Quality Inspection": "innoterra_phs/custom_scripts/quality_inspection/quality_inspection.js"
+}
+
+
+doc_events = {
+	"Quality Inspection":{
+		"validate":"innoterra_phs.innoterra_phs.custom_scripts.quality_inspection.quality_inspection.validate_benchmark"
+			
+	}
+}
+
+
+
+
+
 fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 
 	'Letter Head', 'Print Style', 'Print Settings']

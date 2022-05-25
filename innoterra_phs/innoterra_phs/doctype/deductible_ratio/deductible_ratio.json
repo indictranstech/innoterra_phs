@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-05-19 16:22:55.236431",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "quality_inspection_parameter_benchmark",
+  "agreed_price",
+  "deduction_amount",
+  "offer_priced",
+  "territory",
+  "revised_price_table",
+  "supplier_name",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "agreed_price",
+   "fieldtype": "Float",
+   "label": "Agreed Price"
+  },
+  {
+   "fieldname": "deduction_amount",
+   "fieldtype": "Float",
+   "label": "Deduction Amount"
+  },
+  {
+   "fieldname": "offer_priced",
+   "fieldtype": "Float",
+   "label": "Offer Priced"
+  },
+  {
+   "fieldname": "revised_price_table",
+   "fieldtype": "Table",
+   "label": "Revised Price Table",
+   "options": "Revised Price Table"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Link",
+   "label": "Supplier Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Deductible Ratio",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "quality_inspection_parameter_benchmark",
+   "fieldtype": "Table",
+   "label": "Quality Inspection Parameter Benchmark",
+   "options": "Quality Inspection Parameter Detail"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Data",
+   "label": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-05-25 14:26:00.822848",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Deductible Ratio",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
