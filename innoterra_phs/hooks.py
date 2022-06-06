@@ -194,14 +194,12 @@ doctype_js = {
 
 doc_events = {
 	"Quality Inspection":{
-		"validate":"innoterra_phs.innoterra_phs.custom_scripts.quality_inspection.quality_inspection.validate_benchmark"
-			
-	}
+		"validate":"innoterra_phs.innoterra_phs.custom_scripts.quality_inspection.quality_inspection.validate_benchmark" },
+	"Item Price" : {
+	"validate" : "innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.validate_item_price",
+	"before_save" : "innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.before_save_date"}
 }
 
 
 
-
-
-fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 
-	'Letter Head', 'Print Style', 'Print Settings']
+fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 'Letter Head', 'Print Style', 'Print Settings']

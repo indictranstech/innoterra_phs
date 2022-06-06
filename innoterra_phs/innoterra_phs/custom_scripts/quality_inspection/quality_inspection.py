@@ -3,7 +3,9 @@ from frappe.utils import cint, cstr,flt
 
 # adding benchmark values in reading table
 def validate_benchmark(doc,method):
+	doc.flags.ignore_mandatory = True
 	if doc.quality_inspection_template:
+
 		for item in doc.readings:
 			bench_doc = frappe.get_doc("Quality Inspection Rule Benchmarks",{'quality_inspection_parameter':item.specification, 'item_name':doc.item_code,'territory':doc.territory})
 			item.benchmark = bench_doc.benchmark
@@ -20,7 +22,7 @@ def make_deductible_ratio(doc):
 			dr_doc.item_code = qc_doc.item_code
 			dr_doc.agreed_price = qc_doc.agreed_price
 			dr_doc.territory = qc_doc.territory
-			coll_doc = frappe.get_doc("Collection Intimation",qc_doc.reference_name)
+			coll_doc = frappe.get_doc("Collection Intimation",qc_doc.reference_name1)
 			dr_doc.supplier_name = coll_doc.farmer
 			for item in qc_doc.readings:
 				quality_rule_doc = frappe.get_doc("Quality Inspection Rule Benchmarks",{'quality_inspection_parameter':item.specification, 'item_name':qc_doc.item_code,'territory':qc_doc.territory})

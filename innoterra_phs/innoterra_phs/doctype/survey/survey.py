@@ -11,5 +11,8 @@ class Survey(Document):
 		self.village = address_doc.village
 		self.tehsil = address_doc.taluka
 		self.district = address_doc.county
+		self.territory_name = address_doc.territory
+		territory_doc = frappe.get_doc("Territory",address_doc.territory)
+		self.territory_no =  territory_doc.territory_number
 		
 

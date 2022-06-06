@@ -66,7 +66,7 @@ frappe.ui.form.on('Collection Intimation', {
 				callback:function(r){
 					if(!r.exc) {
     					if(r.message) {
-   							frappe.set_route('List', 'Quality Inspection', {"reference_name": frm.doc.name })
+   							frappe.set_route('List', 'Quality Inspection', {"reference_name1": frm.doc.name })
                          }}
 						}
         	   })

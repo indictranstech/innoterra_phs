@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-06-02 10:20:52.155385",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "transporter_name",
+  "vehicle_no",
+  "type_of_comodity",
+  "driver_license_number",
+  "dl_end_date",
+  "no_of_pkgpcs",
+  "old_seal_no",
+  "new_seal_no",
+  "column_break_9",
+  "ref_no",
+  "delivery_challan",
+  "weight",
+  "gate_in_time",
+  "gate_out_time",
+  "truck_weighment_slip"
+ ],
+ "fields": [
+  {
+   "default": "GAT.YY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "GAT.YY.-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "transporter_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transporter Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle No"
+  },
+  {
+   "fieldname": "no_of_pkgpcs",
+   "fieldtype": "Data",
+   "label": "No. of Pkg/Pcs"
+  },
+  {
+   "fieldname": "old_seal_no",
+   "fieldtype": "Data",
+   "label": "Old Seal No."
+  },
+  {
+   "fieldname": "new_seal_no",
+   "fieldtype": "Data",
+   "label": "New Seal No."
+  },
+  {
+   "fieldname": "ref_no",
+   "fieldtype": "Data",
+   "label": "Ref. No."
+  },
+  {
+   "fieldname": "delivery_challan",
+   "fieldtype": "Link",
+   "label": "Delivery Challan",
+   "options": "Delivery Note"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "gate_in_time",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Gate In Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gate_out_time",
+   "fieldtype": "Datetime",
+   "label": "Gate Out Time"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_comodity",
+   "fieldtype": "Data",
+   "label": "Type of Comodity"
+  },
+  {
+   "fieldname": "driver_license_number",
+   "fieldtype": "Date",
+   "label": "Driver License Number"
+  },
+  {
+   "fieldname": "dl_end_date",
+   "fieldtype": "Date",
+   "label": "DL End Date"
+  },
+  {
+   "fieldname": "truck_weighment_slip",
+   "fieldtype": "Attach",
+   "label": "Truck Weighment Slip"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-06 10:08:53.576906",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Gate Pass",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
