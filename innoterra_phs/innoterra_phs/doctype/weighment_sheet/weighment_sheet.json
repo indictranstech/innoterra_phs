@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-02 09:53:25.219842",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_name",
+  "supplier_quotation",
+  "weighment_details",
+  "total_weight",
+  "deduction_of_weight",
+  "count_of_total_gunny_bags"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Link",
+   "label": "Item Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "supplier_quotation",
+   "fieldtype": "Link",
+   "label": "Deductiable Ratio",
+   "options": "Deductible Ratio"
+  },
+  {
+   "fieldname": "weighment_details",
+   "fieldtype": "Table",
+   "label": "Weighment Details",
+   "options": "Weighment Details",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Total Weight",
+   "read_only": 1
+  },
+  {
+   "fieldname": "deduction_of_weight",
+   "fieldtype": "Data",
+   "label": "Deduction of Weight"
+  },
+  {
+   "fieldname": "count_of_total_gunny_bags",
+   "fieldtype": "Data",
+   "label": "Count of total Gunny Bags"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-06 09:57:08.850934",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Weighment Sheet",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

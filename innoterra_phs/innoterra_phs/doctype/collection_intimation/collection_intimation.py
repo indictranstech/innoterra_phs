@@ -28,13 +28,14 @@ def make_quality_inspection(selected_items,doc,territory):
 	for item in selected_items:
 		qc_doc = frappe.new_doc("Quality Inspection")
 		if qc_doc:
-			qc_doc.reference_type = "Collection Intimation"
-			qc_doc.reference_name = doc
+			qc_doc.reference_type1 = "Collection Intimation"
+			qc_doc.reference_name1 = doc
 			qc_doc.item_code = item
 			qc_doc.inspection_type = "Incoming"
 			qc_doc.inspected_by = "Administrator"
 			qc_doc.sample_size = 0.0
 			qc_doc.territory = territory
+			qc_doc.flags.ignore_mandatory = True
 			qc_doc.save()
 		else:
 			frappe.throw("Please Select Atleast One Item")
