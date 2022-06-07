@@ -13,14 +13,14 @@ class DeductibleRatio(Document):
 		diff_sum = 0
 		for item in self.quality_inspection_parameter_benchmark:
 			if item.deductible_ratio_trigger == 'Greater Than':
-				if item.actual_quality_inspection > item.benchmark :
-					item.difference = flt(item.multiplier*(item.actual_quality_inspection - item.benchmark))
+				if item.actual_quality_inspection > item.benchmark_value:
+					item.difference = flt(item.multiplier*(item.actual_quality_inspection - item.benchmark_value))
 				else :
 					item.difference = 0
 
 			else :
-				if item.actual_quality_inspection < item.benchmark :
-					item.difference = flt(item.multiplier*(item.benchmark - item.actual_quality_inspection))
+				if item.actual_quality_inspection < item.benchmark_value :
+					item.difference = flt(item.multiplier*(item.benchmark_value - item.actual_quality_inspection))
 				else :
 					item.difference = 0
 
