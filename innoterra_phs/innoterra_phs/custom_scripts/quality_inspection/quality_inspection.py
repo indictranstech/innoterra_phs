@@ -28,11 +28,11 @@ def make_deductible_ratio(doc):
 				quality_rule_doc = frappe.get_doc("Quality Inspection Rule Benchmarks",{'quality_inspection_parameter':item.specification, 'item_name':qc_doc.item_code,'territory':qc_doc.territory})
 
 				dr_doc.append("quality_inspection_parameter_benchmark",{
-					'quality_inspection_parameter': quality_rule_doc.quality_inspection_parameter,
+					'quality_inspection_parameters': quality_rule_doc.quality_inspection_parameter,
 					'uom': quality_rule_doc.uom,
 					'deductible_ratio_trigger':quality_rule_doc.deductible_ratio_trigger,
 					'multiplier': quality_rule_doc.multiplier,
-					'benchmark': quality_rule_doc.benchmark,
+					'benchmark_value': quality_rule_doc.benchmark,
 					'actual_quality_inspection':flt(item.get('reading_1'))
 				})
 			dr_doc.save()
