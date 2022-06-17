@@ -1,0 +1,790 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:warehouse_name",
+ "creation": "2022-06-09 13:25:15.623303",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "warehouse_name",
+  "address_section",
+  "address_html",
+  "primary_address_section",
+  "warehouse_primary_address",
+  "primary_address",
+  "section_break_6",
+  "location",
+  "warehouse_address_proof",
+  "warehouse_licence_no_if_any",
+  "gst_no",
+  "column_break_6",
+  "warehouse_ownership",
+  "name_and_address_of_warehouse_ownerlessor",
+  "address_of_correspondence",
+  "kyc_details_of_warehouse_owner_lessor",
+  "pan_no_of_warehouse_ownerlessor",
+  "physical_condition_of_the_warehouse_section",
+  "length_of_the_warehouse_ft",
+  "breadth_of_the_warehouse_ft",
+  "height_of_the_warehouse_ft",
+  "area_of_the_warehouse_sq_ft",
+  "year_of_construction",
+  "age_warehouse_html",
+  "flooring",
+  "floor_strength_certificate",
+  "roof",
+  "walls",
+  "shutters_in_no",
+  "windows_in_no",
+  "ventilators_in_no_turbo_ventilators",
+  "plinth_height_in_ft_from_ground_level",
+  "drainage_channel",
+  "type_of_compound",
+  "height_of_the_compound_in_ft",
+  "compound_gate_height_in_ft",
+  "compound_gate_in_no",
+  "column_break_31",
+  "whether_warehouse_is_divided_into_chambers_or_partitions",
+  "height_of_the_partition_in_ft",
+  "weighing_bridge_capacityperfor_mance_in_tonnes",
+  "approach_road_to_warehouse",
+  "distance_between_warehouse_and_highway_km",
+  "availability_for_office_space",
+  "availability_of_drinking_water",
+  "toilet_facility",
+  "name_of_the_underwriter_insurer_of_warehouse",
+  "insurance_policy_no",
+  "sum_assured",
+  "validity_period",
+  "distance_between_warehouse_and_highway",
+  "distance_to_nearest_weighbridge_section",
+  "distancekm",
+  "ph_no_with_std",
+  "column_break_48",
+  "address",
+  "name_and_distance_to_nearest_mandi_section",
+  "name1",
+  "km",
+  "mandi_ph_no_with_std",
+  "distance_to_nearest_police_station_section",
+  "police_station_distancekm",
+  "police_station_ph_no_with_std",
+  "column_break_57",
+  "police_station_address",
+  "distance_to_nearest_fire_station_section",
+  "fire_station_distancekm",
+  "fire_station_ph_no_with_std",
+  "column_break_62",
+  "fire_station_address",
+  "distance_to_nearest_government_hospital_section",
+  "government_hospital_distancekm",
+  "government_hospital_ph_no_with_std",
+  "column_break_67",
+  "government_hospital_address",
+  "electricity_connection_and__duration_of_availability_section",
+  "single_phase",
+  "three_phase",
+  "column_break_68",
+  "duration_of_single_phase",
+  "duration_of_three_phase",
+  "alternate_power_backup_3_phase",
+  "accessibility_of_vehicle_inside_the_warehouse_section",
+  "up_to",
+  "column_break_73",
+  "ton",
+  "internet_service_provider_section",
+  "internet_service_provider_name",
+  "column_break_78",
+  "speed",
+  "equipment_and_machinary_cleaning_machine_section",
+  "model_details",
+  "brand_details",
+  "date_of_installation",
+  "column_break_84",
+  "capacity",
+  "commodities_to_be_cleaned",
+  "column_break_91",
+  "remarks",
+  "equipment_and_machinary_destoner_section",
+  "machinary_destoner_model_details",
+  "machinary_destoner_brand_details",
+  "machinary_destoner_date_of_installation",
+  "column_break_92",
+  "machinary_destoner_capacity",
+  "machinary_destoner_commodities_to_be_cleaned",
+  "column_break_100",
+  "machinary_destoner_remarks",
+  "equipment_and_machinary_grading_machine_section",
+  "grading_machine_model_details",
+  "grading_machine_brand_details",
+  "grading_machine_date_of_installation",
+  "grading_machine_capacity1",
+  "grading_machine_commodities_to_be_cleaned",
+  "grading_machine_remarks",
+  "column_break_103",
+  "type_of_fire_extinguisher",
+  "no_of_fire_extinguisher",
+  "weight_of_the_each_fire_extinguisher",
+  "expiry_date_of_the_fe",
+  "name_of_the_inspector",
+  "contact_no",
+  "employee_code",
+  "terms_and_condition_details",
+  "terms_and_condition"
+ ],
+ "fields": [
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "warehouse_address_proof",
+   "fieldtype": "Data",
+   "label": "Warehouse address proof"
+  },
+  {
+   "fieldname": "warehouse_licence_no_if_any",
+   "fieldtype": "Data",
+   "label": "Warehouse Licence No. (if any)"
+  },
+  {
+   "fieldname": "gst_no",
+   "fieldtype": "Data",
+   "label": "GST No."
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "warehouse_ownership",
+   "fieldtype": "Select",
+   "label": "Warehouse Ownership",
+   "options": "Owned\nLeasehold"
+  },
+  {
+   "fieldname": "name_and_address_of_warehouse_ownerlessor",
+   "fieldtype": "Link",
+   "label": "Name and Address of Warehouse owner/Lessor",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_of_correspondence",
+   "fieldtype": "Link",
+   "label": "Address of Correspondence",
+   "options": "Address"
+  },
+  {
+   "fieldname": "kyc_details_of_warehouse_owner_lessor",
+   "fieldtype": "Data",
+   "label": "KYC details of Warehouse Owner/ Lessor"
+  },
+  {
+   "fieldname": "pan_no_of_warehouse_ownerlessor",
+   "fieldtype": "Data",
+   "label": "PAN No. of Warehouse Owner/Lessor"
+  },
+  {
+   "fieldname": "physical_condition_of_the_warehouse_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Condition Of The Warehouse"
+  },
+  {
+   "fieldname": "length_of_the_warehouse_ft",
+   "fieldtype": "Float",
+   "label": "Length of the Warehouse (ft)"
+  },
+  {
+   "fieldname": "breadth_of_the_warehouse_ft",
+   "fieldtype": "Float",
+   "label": "Breadth of the Warehouse (ft)"
+  },
+  {
+   "fieldname": "height_of_the_warehouse_ft",
+   "fieldtype": "Float",
+   "label": "Height of the Warehouse (ft)"
+  },
+  {
+   "fieldname": "area_of_the_warehouse_sq_ft",
+   "fieldtype": "Float",
+   "label": "Area of the warehouse (Sq ft)"
+  },
+  {
+   "fieldname": "flooring",
+   "fieldtype": "Data",
+   "label": "Flooring"
+  },
+  {
+   "fieldname": "floor_strength_certificate",
+   "fieldtype": "Attach",
+   "label": "Floor strength certificate"
+  },
+  {
+   "fieldname": "roof",
+   "fieldtype": "Float",
+   "label": "Roof"
+  },
+  {
+   "fieldname": "walls",
+   "fieldtype": "Float",
+   "label": "Walls"
+  },
+  {
+   "fieldname": "shutters_in_no",
+   "fieldtype": "Int",
+   "label": "Shutters (In no.)"
+  },
+  {
+   "fieldname": "windows_in_no",
+   "fieldtype": "Int",
+   "label": "Windows (In no.)"
+  },
+  {
+   "fieldname": "ventilators_in_no_turbo_ventilators",
+   "fieldtype": "Int",
+   "label": "Ventilators (In no.)/ Turbo Ventilators"
+  },
+  {
+   "fieldname": "plinth_height_in_ft_from_ground_level",
+   "fieldtype": "Float",
+   "label": "Plinth Height (in ft from ground level)"
+  },
+  {
+   "fieldname": "drainage_channel",
+   "fieldtype": "Data",
+   "label": "Drainage Channel"
+  },
+  {
+   "fieldname": "type_of_compound",
+   "fieldtype": "Data",
+   "label": "Type of Compound"
+  },
+  {
+   "fieldname": "height_of_the_compound_in_ft",
+   "fieldtype": "Float",
+   "label": "Height of the compound (in ft)"
+  },
+  {
+   "fieldname": "compound_gate_height_in_ft",
+   "fieldtype": "Float",
+   "label": "Compound Gate Height (in ft)"
+  },
+  {
+   "fieldname": "compound_gate_in_no",
+   "fieldtype": "Float",
+   "label": "Compound Gate (In No)"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whether_warehouse_is_divided_into_chambers_or_partitions",
+   "fieldtype": "Data",
+   "label": "Whether warehouse is divided into Chambers or Partitions"
+  },
+  {
+   "fieldname": "height_of_the_partition_in_ft",
+   "fieldtype": "Float",
+   "label": "Height of the partition (in ft)"
+  },
+  {
+   "fieldname": "weighing_bridge_capacityperfor_mance_in_tonnes",
+   "fieldtype": "Float",
+   "label": "Weighing bridge Capacity/Perfor mance in tonnes"
+  },
+  {
+   "fieldname": "approach_road_to_warehouse",
+   "fieldtype": "Data",
+   "label": "Approach road to warehouse"
+  },
+  {
+   "fieldname": "distance_between_warehouse_and_highway_km",
+   "fieldtype": "Data",
+   "label": "Distance between Warehouse and highway (Km)"
+  },
+  {
+   "fieldname": "availability_for_office_space",
+   "fieldtype": "Data",
+   "label": "Availability for office space"
+  },
+  {
+   "fieldname": "availability_of_drinking_water",
+   "fieldtype": "Data",
+   "label": "Availability of Drinking water"
+  },
+  {
+   "default": "Yes",
+   "fieldname": "toilet_facility",
+   "fieldtype": "Select",
+   "label": "Toilet facility",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "name_of_the_underwriter_insurer_of_warehouse",
+   "fieldtype": "Data",
+   "label": "Name of the Underwriter (Insurer) of Warehouse"
+  },
+  {
+   "fieldname": "insurance_policy_no",
+   "fieldtype": "Int",
+   "label": "Insurance Policy No"
+  },
+  {
+   "fieldname": "sum_assured",
+   "fieldtype": "Currency",
+   "label": "Sum Assured"
+  },
+  {
+   "fieldname": "validity_period",
+   "fieldtype": "Data",
+   "label": "Validity Period"
+  },
+  {
+   "fieldname": "distance_between_warehouse_and_highway",
+   "fieldtype": "Float",
+   "label": "Distance between Warehouse and highway"
+  },
+  {
+   "fieldname": "distance_to_nearest_weighbridge_section",
+   "fieldtype": "Section Break",
+   "label": "Distance To Nearest Weighbridge"
+  },
+  {
+   "fieldname": "distancekm",
+   "fieldtype": "Float",
+   "label": "Weighbridge Distance(Km)"
+  },
+  {
+   "fieldname": "ph_no_with_std",
+   "fieldtype": "Int",
+   "label": "Weighbridge Ph. No with STD"
+  },
+  {
+   "fieldname": "column_break_48",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Weighbridge Address"
+  },
+  {
+   "fieldname": "name_and_distance_to_nearest_mandi_section",
+   "fieldtype": "Section Break",
+   "label": "Name And Distance To Nearest Mandi"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Mandi Name"
+  },
+  {
+   "fieldname": "km",
+   "fieldtype": "Float",
+   "label": "Mandi Distance(Km)"
+  },
+  {
+   "fieldname": "mandi_ph_no_with_std",
+   "fieldtype": "Int",
+   "label": "Mandi Ph. No with STD"
+  },
+  {
+   "fieldname": "distance_to_nearest_police_station_section",
+   "fieldtype": "Section Break",
+   "label": "Distance To Nearest Police Station"
+  },
+  {
+   "fieldname": "police_station_distancekm",
+   "fieldtype": "Float",
+   "label": "Police Station Distance(Km)"
+  },
+  {
+   "fieldname": "police_station_ph_no_with_std",
+   "fieldtype": "Int",
+   "label": "Police Station Ph. No with STD"
+  },
+  {
+   "fieldname": "column_break_57",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "police_station_address",
+   "fieldtype": "Small Text",
+   "label": "Police Station Address"
+  },
+  {
+   "fieldname": "distance_to_nearest_fire_station_section",
+   "fieldtype": "Section Break",
+   "label": "Distance To Nearest Fire Station"
+  },
+  {
+   "fieldname": "fire_station_distancekm",
+   "fieldtype": "Float",
+   "label": "Fire Station Distance(Km)"
+  },
+  {
+   "fieldname": "fire_station_ph_no_with_std",
+   "fieldtype": "Int",
+   "label": "Fire Station Ph. No with STD"
+  },
+  {
+   "fieldname": "column_break_62",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fire_station_address",
+   "fieldtype": "Small Text",
+   "label": "Fire Station Address"
+  },
+  {
+   "fieldname": "distance_to_nearest_government_hospital_section",
+   "fieldtype": "Section Break",
+   "label": "Distance To Nearest Government Hospital"
+  },
+  {
+   "fieldname": "government_hospital_distancekm",
+   "fieldtype": "Float",
+   "label": "Government Hospital Distance(Km)"
+  },
+  {
+   "fieldname": "government_hospital_ph_no_with_std",
+   "fieldtype": "Int",
+   "label": "Government Hospital Ph. No with STD"
+  },
+  {
+   "fieldname": "column_break_67",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "government_hospital_address",
+   "fieldtype": "Small Text",
+   "label": "Government Hospital Address"
+  },
+  {
+   "fieldname": "electricity_connection_and__duration_of_availability_section",
+   "fieldtype": "Section Break",
+   "label": "Electricity Connection and  Duration Of Availability"
+  },
+  {
+   "fieldname": "single_phase",
+   "fieldtype": "Data",
+   "label": "Single Phase"
+  },
+  {
+   "fieldname": "three_phase",
+   "fieldtype": "Data",
+   "label": "Three Phase"
+  },
+  {
+   "fieldname": "column_break_68",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration_of_single_phase",
+   "fieldtype": "Data",
+   "label": "Duration of Single Phase"
+  },
+  {
+   "fieldname": "duration_of_three_phase",
+   "fieldtype": "Data",
+   "label": "Duration of Three Phase"
+  },
+  {
+   "fieldname": "alternate_power_backup_3_phase",
+   "fieldtype": "Data",
+   "label": "Alternate power backup (3 Phase)"
+  },
+  {
+   "fieldname": "accessibility_of_vehicle_inside_the_warehouse_section",
+   "fieldtype": "Section Break",
+   "label": "Accessibility Of Vehicle Inside The Warehouse"
+  },
+  {
+   "fieldname": "up_to",
+   "fieldtype": "Date",
+   "label": "Up To"
+  },
+  {
+   "fieldname": "column_break_73",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ton",
+   "fieldtype": "Float",
+   "label": "Ton."
+  },
+  {
+   "fieldname": "internet_service_provider_section",
+   "fieldtype": "Section Break",
+   "label": "Internet Service Provider"
+  },
+  {
+   "fieldname": "internet_service_provider_name",
+   "fieldtype": "Data",
+   "label": "Internet Service Provider Name"
+  },
+  {
+   "fieldname": "column_break_78",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "/mbps",
+   "fieldname": "speed",
+   "fieldtype": "Float",
+   "label": "Speed"
+  },
+  {
+   "fieldname": "equipment_and_machinary_cleaning_machine_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment And Machinary Cleaning Machine"
+  },
+  {
+   "fieldname": "model_details",
+   "fieldtype": "Data",
+   "label": "Cleaning Machine Model Details"
+  },
+  {
+   "fieldname": "brand_details",
+   "fieldtype": "Data",
+   "label": "Cleaning Machine Brand Details"
+  },
+  {
+   "fieldname": "date_of_installation",
+   "fieldtype": "Date",
+   "label": "Cleaning Machine Date of installation"
+  },
+  {
+   "fieldname": "column_break_84",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Float",
+   "label": "Cleaning Machine Capacity"
+  },
+  {
+   "fieldname": "commodities_to_be_cleaned",
+   "fieldtype": "Data",
+   "label": "Cleaning Machine Commodities to be cleaned"
+  },
+  {
+   "fieldname": "column_break_91",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Cleaning Machine Remarks"
+  },
+  {
+   "fieldname": "equipment_and_machinary_destoner_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment And Machinary Destoner"
+  },
+  {
+   "fieldname": "machinary_destoner_model_details",
+   "fieldtype": "Data",
+   "label": "Destoner Model Details"
+  },
+  {
+   "fieldname": "machinary_destoner_brand_details",
+   "fieldtype": "Data",
+   "label": "Destoner Brand Details"
+  },
+  {
+   "fieldname": "machinary_destoner_date_of_installation",
+   "fieldtype": "Date",
+   "label": "Destoner Date of installation"
+  },
+  {
+   "fieldname": "column_break_92",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "machinary_destoner_capacity",
+   "fieldtype": "Float",
+   "label": "Destoner Capacity"
+  },
+  {
+   "fieldname": "machinary_destoner_commodities_to_be_cleaned",
+   "fieldtype": "Data",
+   "label": "Destoner Commodities to be cleaned"
+  },
+  {
+   "fieldname": "column_break_100",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "machinary_destoner_remarks",
+   "fieldtype": "Small Text",
+   "label": "Destoner Remarks"
+  },
+  {
+   "fieldname": "equipment_and_machinary_grading_machine_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment And Machinary Grading Machine"
+  },
+  {
+   "fieldname": "grading_machine_model_details",
+   "fieldtype": "Data",
+   "label": "Grading Machine Model Details"
+  },
+  {
+   "fieldname": "grading_machine_brand_details",
+   "fieldtype": "Data",
+   "label": "Grading Machine Brand Details"
+  },
+  {
+   "fieldname": "grading_machine_date_of_installation",
+   "fieldtype": "Date",
+   "label": "Grading Machine Date of installation"
+  },
+  {
+   "fieldname": "grading_machine_capacity1",
+   "fieldtype": "Float",
+   "label": "Grading Machine Capacity"
+  },
+  {
+   "fieldname": "grading_machine_commodities_to_be_cleaned",
+   "fieldtype": "Data",
+   "label": "Grading Machine Commodities to be cleaned"
+  },
+  {
+   "fieldname": "grading_machine_remarks",
+   "fieldtype": "Small Text",
+   "label": "Grading Machine Remarks"
+  },
+  {
+   "fieldname": "column_break_103",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_fire_extinguisher",
+   "fieldtype": "Data",
+   "label": "Type of fire extinguisher"
+  },
+  {
+   "fieldname": "no_of_fire_extinguisher",
+   "fieldtype": "Int",
+   "label": "No. of fire extinguisher"
+  },
+  {
+   "fieldname": "weight_of_the_each_fire_extinguisher",
+   "fieldtype": "Float",
+   "label": "Weight of the each fire extinguisher"
+  },
+  {
+   "fieldname": "expiry_date_of_the_fe",
+   "fieldtype": "Date",
+   "label": "Expiry date of the FE"
+  },
+  {
+   "fieldname": "name_of_the_inspector",
+   "fieldtype": "Data",
+   "label": "Name of the Inspector"
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "label": "Contact No."
+  },
+  {
+   "fieldname": "employee_code",
+   "fieldtype": "Link",
+   "label": "Employee Code",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "terms_and_condition_details",
+   "fieldtype": "Section Break",
+   "label": "Terms and Condition Details"
+  },
+  {
+   "fieldname": "terms_and_condition",
+   "fieldtype": "Link",
+   "label": "Terms and Condition",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "age_warehouse_html",
+   "fieldtype": "HTML",
+   "label": "Age of the Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "year_of_construction",
+   "fieldtype": "Date",
+   "label": "Year of construction"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address ",
+   "options": "fa fa-map-marker"
+  },
+  {
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "primary_address_section",
+   "fieldtype": "Section Break",
+   "label": "Primary Address"
+  },
+  {
+   "fieldname": "warehouse_primary_address",
+   "fieldtype": "Link",
+   "label": "Warehouse Primary Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "Text",
+   "label": "Primary Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "warehouse_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Warehouse Name",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-16 17:57:28.212212",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Warehouse Inspection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

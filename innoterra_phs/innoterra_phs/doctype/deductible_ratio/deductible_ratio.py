@@ -32,25 +32,33 @@ class DeductibleRatio(Document):
 # adding item price into item price list 
 @frappe.whitelist()
 def add_pricelist(item,rate,price_list):
-	old_price_doc = frappe.get_doc("Item Price",{'item_code':item,'price_list':price_list})
-	if old_price_doc:
-		frappe.db.set_value("Item Price",old_price_doc.name,'valid_upto',nowdate())
-		frappe.db.commit()
+	if not frappe.db.exists("Item Price",{'item_code':item,'price_list':price_list}):
+		price_doc = frappe.new_doc("Item Price")
+		if price_doc:
+			price_doc.item_code = item
+			price_doc.price_list = price_list
+			price_doc.price_list_rate = rate
+			price_doc.save()
 
-	price_doc = frappe.new_doc("Item Price")
-	if price_doc:
-		price_doc.item_code = item
-		price_doc.price_list = price_list
-		price_doc.price_list_rate = rate
-		price_doc.save()
-
-		#frappe.db.commit()
-	else:
-		frappe.throw("price list not created")
-	return price_doc.name
-
+			#frappe.db.commit()
+		else:
+			frappe.throw("price list not created")
 	
+	else :
+		old_price_doc = frappe.get_doc("Item Price",{'item_code':item,'price_list':price_list})
+		if old_price_doc:
+			frappe.db.set_value("Item Price",old_price_doc.name,'valid_upto',nowdate())
+			frappe.db.commit()
 
+		price_doc = frappe.new_doc("Item Price")
+		if price_doc:
+			price_doc.item_code = item
+			price_doc.price_list = price_list
+			price_doc.price_list_rate = rate
+			price_doc.save()
 
-
-
+			#frappe.db.commit()
+		else:
+			frappe.throw("price list not created")
+	
+	return price_doc.name

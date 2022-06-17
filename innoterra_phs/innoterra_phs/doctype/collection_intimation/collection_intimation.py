@@ -13,7 +13,7 @@ class CollectionIntimation(Document):
 	def validate(self):
 		farmer_doc = frappe.get_doc("Supplier",self.farmer)
 		address_doc = frappe.get_doc("Address",{'address_title':farmer_doc.supplier_name})
-		self.territory =address_doc.territory
+		self.territory = address_doc.territory
 
 
 # create quality inspection on clicking create quality inspection

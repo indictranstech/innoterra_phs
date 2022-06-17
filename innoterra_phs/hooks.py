@@ -197,7 +197,10 @@ doc_events = {
 		"validate":"innoterra_phs.innoterra_phs.custom_scripts.quality_inspection.quality_inspection.validate_benchmark" },
 	"Item Price" : {
 	"validate" : "innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.validate_item_price",
-	"before_save" : "innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.before_save_date"}
+	"before_save" : "innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.before_save_date"},
+	 "Warehouse" : {
+	 "after_insert" : "innoterra_phs.innoterra_phs.custom_scripts.warehouse.warehouse.fetch_address",
+	 "onload": "innoterra_phs.innoterra_phs.custom_scripts.warehouse.warehouse.onload"}
 }
 
 
