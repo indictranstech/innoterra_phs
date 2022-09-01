@@ -188,7 +188,11 @@ user_data_fields = [
 # translated_search_doctypes = []
 
 doctype_js = {
-	"Quality Inspection": "innoterra_phs/custom_scripts/quality_inspection/quality_inspection.js"
+	"Quality Inspection": "innoterra_phs/custom_scripts/quality_inspection/quality_inspection.js",
+	"Purchase Order": "innoterra_phs/custom_scripts/purchase_order/purchase_order.js",
+	"Purchase Receipt": "innoterra_phs/custom_scripts/purchase_receipt/purchase_receipt.js",
+	"Purchase Invoice": "innoterra_phs/custom_scripts/purchase_invoice/purchase_invoice.js"
+
 }
 
 
