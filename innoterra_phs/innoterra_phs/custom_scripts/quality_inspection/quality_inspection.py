@@ -21,6 +21,7 @@ def make_deductible_ratio(doc):
 		if dr_doc:
 			dr_doc.item_code = qc_doc.item_code
 			dr_doc.agreed_price = qc_doc.agreed_price
+			dr_doc.agreed_qty = qc_doc.agreed_qty
 			dr_doc.territory = qc_doc.territory
 			coll_doc = frappe.get_doc("Collection Intimation",qc_doc.reference_name1)
 			dr_doc.supplier_name = coll_doc.farmer
