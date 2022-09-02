@@ -38,8 +38,10 @@ class DeductibleRatio(Document):
 		self.deduction_qty = diff_qty
 
 		ans = flt(self.deduction_amount/100)
+		per = flt(self.deduction_qty/100)
+
 		self.offer_priced = self.agreed_price - (self.agreed_price * ans)
-		self.offer_qty = self.agreed_qty - self.deduction_qty
+		self.offer_qty = self.agreed_qty - (self.agreed_qty * per)
 		
 # adding item price into item price list 
 @frappe.whitelist()
