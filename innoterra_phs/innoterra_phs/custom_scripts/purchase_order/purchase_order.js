@@ -1,6 +1,6 @@
 frappe.ui.form.on('Purchase Order', {
 
-    onload(frm){
+    refresh(frm){
         // if (){}
         frm.add_custom_button('Sales Order', () => {
 

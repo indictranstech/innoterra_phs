@@ -1,9 +1,11 @@
 # Copyright (c) 2022, Indictranstech and contributors
 # For license information, please see license.txt
 
+from lib2to3.pgen2 import driver
 import frappe
 from frappe.model.document import Document
 from frappe.utils import cint, cstr,flt, nowdate
+from frappe.model.mapper import get_mapped_doc
 
 
 
@@ -76,3 +78,86 @@ def add_pricelist(item,rate,price_list):
 			frappe.throw("price list not created")
 	
 	return price_doc.name
+
+@frappe.whitelist()
+def Create_Qty_PO(source_name):
+	doc = frappe.get_doc('Deductible Ratio',source_name)
+	itemscode = frappe.get_doc("Item",doc.item_code)
+	item = []
+	item.append(
+		{
+				"item_code": itemscode.item_code,
+				"item_name": itemscode.item_name,
+				"description": itemscode.description,
+				"item_group": itemscode.item_group,
+				"qty": doc.offer_qty,
+				"rate":doc.agreed_price,
+				"amount":doc.offer_qty * doc.agreed_price,
+				"base_amount": doc.offer_qty * doc.agreed_price,
+				"net_rate": doc.agreed_price,
+				"net_amount": doc.offer_qty * doc.agreed_price,
+				"base_net_rate":doc.agreed_price,
+				"base_net_amount":doc.offer_qty * doc.agreed_price,
+				"doctype": "Purchase order Item",
+			}
+		
+		)
+	po = frappe.get_doc(
+	{
+	
+		"supplier": doc.supplier_name,
+		"conversion_rate": 1,
+		"schedule_date":"2022-10-10",
+		"tax_category": "",
+		"status": "Draft",
+		"doctype": "Purchase Order",
+		"items": item,
+	}
+		
+	).insert()
+
+	return po.name
+
+
+@frappe.whitelist()
+def Create_price_PO(source_name):
+	doc = frappe.get_doc('Deductible Ratio',source_name)
+	itemscode = frappe.get_doc("Item",doc.item_code)
+	
+	Revised_Price  = frappe.db.sql(f"""  select * from `tabRevised Price Table`  where parent ='{source_name}' and  price_list = 'Standard Buying'  """,as_dict=1)
+	rp = float(Revised_Price[0]['revised_price'])
+
+	item = []
+	item.append(
+		{
+				"item_code": itemscode.item_code,
+				"item_name": itemscode.item_name,
+				"description": itemscode.description,
+				"item_group": itemscode.item_group,
+				"qty": doc.agreed_qty,
+				"rate":rp,
+				"amount":doc.agreed_qty * rp,
+				"base_amount": doc.agreed_qty * rp,
+				"net_rate": rp,
+				"net_amount": doc.agreed_qty * rp,
+				"base_net_rate":rp,
+				"base_net_amount":doc.agreed_qty * rp,
+				"doctype": "Purchase order Item",
+			}
+		
+		)
+	po = frappe.get_doc(
+	{
+	
+		"supplier": doc.supplier_name,
+		"conversion_rate": 1,
+		"schedule_date":"2022-10-10",
+		"tax_category": "",
+		"status": "Draft",
+		"doctype": "Purchase Order",
+		"items": item,
+	}
+		
+	).insert()
+
+	return po.name
