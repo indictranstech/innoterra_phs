@@ -212,4 +212,4 @@ doc_events = {
 
 
 
-fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 'Letter Head', 'Print Style', 'Print Settings']
+fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 'Letter Head', 'Print Style', 'Print Settings',"Workflow","Workflow State","Workflow Action","Terms and Conditions" ]
