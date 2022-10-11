@@ -7,6 +7,7 @@ from frappe.model.document import Document
 from frappe.utils import cint, cstr,flt, nowdate
 from frappe.model.mapper import get_mapped_doc
 
+from frappe.utils import today
 
 
 class DeductibleRatio(Document):
@@ -107,7 +108,7 @@ def Create_Qty_PO(source_name):
 	
 		"supplier": doc.supplier_name,
 		"conversion_rate": 1,
-		"schedule_date":"2022-10-10",
+		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
 		"doctype": "Purchase Order",
@@ -151,7 +152,7 @@ def Create_price_PO(source_name):
 	
 		"supplier": doc.supplier_name,
 		"conversion_rate": 1,
-		"schedule_date":"2022-10-10",
+		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
 		"doctype": "Purchase Order",
