@@ -193,8 +193,8 @@ doctype_js = {
 	"Purchase Receipt": "innoterra_phs/custom_scripts/purchase_receipt/purchase_receipt.js",
 	"Purchase Invoice": "innoterra_phs/custom_scripts/purchase_invoice/purchase_invoice.js",
 	"Sales Order": "innoterra_phs/custom_scripts/sales_order/sales_order.js",
-	"Item Price": "innoterra_phs/custom_scripts/item_price/item_price.js",
-	"Supplier": "innoterra_phs/custom_scripts/supplier/supplier.js"
+	"Item Price": "innoterra_phs/custom_scripts/item_price/item_price.js"
+
 
 }
 
