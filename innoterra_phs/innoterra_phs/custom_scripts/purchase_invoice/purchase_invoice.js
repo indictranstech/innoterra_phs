@@ -15,6 +15,10 @@ frappe.ui.form.on('Purchase Invoice', {
         frm.trigger('get_supplier');
     },
     
+    is_vla(frm) {
+        frm.trigger('get_supplier');
+    },
+    
     supplier(frm) {
         frm.trigger('get_supplier');
     },
@@ -33,6 +37,10 @@ frappe.ui.form.on('Purchase Invoice', {
         
         if (frm.doc.is_farmer == 1){
             query.is_farmer =1
+        }
+        
+        if (frm.doc.is_vla == 1){
+            query.is_vla =1
         }
         
         // console.log(query)
