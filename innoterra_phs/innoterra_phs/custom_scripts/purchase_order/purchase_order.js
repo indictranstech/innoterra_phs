@@ -39,6 +39,32 @@ frappe.ui.form.on('Purchase Order', {
     supplier(frm) {
         frm.trigger('get_supplier');
     },
+    is_vla(frm) {
+        frm.set_query('vla', () => {
+            return {
+                filters: {
+                    is_vla: frm.doc.is_vla
+                }
+            }
+        });
+    },
+    set_warehouse(frm) {
+        if(frm.doc.set_warehouse != null){
+			frappe.call({
+				method: "innoterra_phs.innoterra_phs.custom_scripts.purchase_order.purchase_order.get_warehouse_address",
+				args:{
+					'warehouse': frm.doc.set_warehouse,
+				},
+				"callback": function(r) {
+					if(r.message && r.message.warehouse_address){
+                        console.log(r.message);
+						frm.set_value("shipping_address",r.message.warehouse_address);
+						frm.refresh_field("company_address");
+					}
+				}
+			});
+		}
+    },
      
     get_supplier(frm) {
         
