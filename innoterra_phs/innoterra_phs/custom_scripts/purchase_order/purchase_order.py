@@ -3,7 +3,12 @@ from frappe.model.mapper import get_mapped_doc
 
 from frappe.utils import flt, getdate, nowdate
 
-
+@frappe.whitelist()
+def get_warehouse_address(warehouse):
+	wh_add = frappe.get_all("Dynamic Link", {'parenttype':"Address", 'link_doctype':"Warehouse", 'link_name':warehouse}, "parent")
+	for add in wh_add:
+		if frappe.db.get_value("Address", add, "is_shipping_address"):
+			return {'warehouse_address': add}
 
 @frappe.whitelist()
 def make_Sales_order(source_name, target_doc=None,ignore_permissions=False):
