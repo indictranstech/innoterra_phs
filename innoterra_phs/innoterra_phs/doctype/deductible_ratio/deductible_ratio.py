@@ -6,6 +6,7 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import cint, cstr,flt, nowdate
 from frappe.model.mapper import get_mapped_doc
+from innoterra_phs.innoterra_phs.custom_scripts.purchase_order.purchase_order import get_warehouse_address
 
 from frappe.utils import today
 
@@ -104,6 +105,7 @@ def Create_Qty_PO(source_name):
 		
 		)
 	warehouse = get_warehouse(doc.qi_reference) if doc.qi_reference else ""
+	wh_add = get_warehouse_address(warehouse) if warehouse else ""
 	po = frappe.get_doc(
 	{
 	
@@ -112,7 +114,8 @@ def Create_Qty_PO(source_name):
 		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
-		"warehouse": warehouse or "",
+		"set_warehouse": warehouse or "",
+		"shipping_address": wh_add or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
@@ -150,6 +153,7 @@ def Create_price_PO(source_name):
 		
 		)
 	warehouse = get_warehouse(doc.qi_reference) if doc.qi_reference else ""
+	wh_add = get_warehouse_address(warehouse) if warehouse else ""
 	po = frappe.get_doc(
 	{
 	
@@ -158,7 +162,8 @@ def Create_price_PO(source_name):
 		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
-		"warehouse": warehouse or "",
+		"set_warehouse": warehouse or "",
+		"shipping_address": wh_add or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
