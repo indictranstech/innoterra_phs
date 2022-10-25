@@ -6,6 +6,7 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import cint, cstr,flt, nowdate
 from frappe.model.mapper import get_mapped_doc
+from innoterra_phs.innoterra_phs.custom_scripts.purchase_order.purchase_order import get_warehouse_address
 
 from frappe.utils import today
 
@@ -103,6 +104,8 @@ def Create_Qty_PO(source_name):
 			}
 		
 		)
+	warehouse = get_warehouse(doc.qi_reference) if doc.qi_reference else ""
+	wh_add = get_warehouse_address(warehouse) if warehouse else ""
 	po = frappe.get_doc(
 	{
 	
@@ -111,6 +114,8 @@ def Create_Qty_PO(source_name):
 		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
+		"set_warehouse": warehouse or "",
+		"shipping_address": wh_add or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
@@ -147,6 +152,8 @@ def Create_price_PO(source_name):
 			}
 		
 		)
+	warehouse = get_warehouse(doc.qi_reference) if doc.qi_reference else ""
+	wh_add = get_warehouse_address(warehouse) if warehouse else ""
 	po = frappe.get_doc(
 	{
 	
@@ -155,6 +162,8 @@ def Create_price_PO(source_name):
 		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
+		"set_warehouse": warehouse or "",
+		"shipping_address": wh_add or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
@@ -162,3 +171,10 @@ def Create_price_PO(source_name):
 	).insert()
 
 	return po.name
+
+def get_warehouse(qi_ref):
+	#qi = frappe.db.get_value("Deductible Ratio", dr_doc, "qi_reference")
+	ci = frappe.db.get_value("Quality Inspection", qi_ref, "reference_name1")
+	wh = frappe.db.get_value("Collection Intimation", ci, "warehouse") if ci else ""
+	if wh:
+		return wh
