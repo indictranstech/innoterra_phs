@@ -115,7 +115,7 @@ def Create_Qty_PO(source_name):
 		"tax_category": "",
 		"status": "Draft",
 		"set_warehouse": warehouse or "",
-		"shipping_address": wh_add or "",
+		"shipping_address": wh_add.get("warehouse_address") or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
@@ -163,7 +163,7 @@ def Create_price_PO(source_name):
 		"tax_category": "",
 		"status": "Draft",
 		"set_warehouse": warehouse or "",
-		"shipping_address": wh_add or "",
+		"shipping_address": wh_add.get("warehouse_address") or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
