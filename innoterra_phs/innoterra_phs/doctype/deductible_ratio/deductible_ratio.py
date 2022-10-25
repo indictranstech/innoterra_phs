@@ -103,6 +103,7 @@ def Create_Qty_PO(source_name):
 			}
 		
 		)
+	warehouse = get_warehouse(doc.qi_reference) if doc.qi_reference else ""
 	po = frappe.get_doc(
 	{
 	
@@ -111,6 +112,7 @@ def Create_Qty_PO(source_name):
 		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
+		"warehouse": warehouse or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
@@ -147,6 +149,7 @@ def Create_price_PO(source_name):
 			}
 		
 		)
+	warehouse = get_warehouse(doc.qi_reference) if doc.qi_reference else ""
 	po = frappe.get_doc(
 	{
 	
@@ -155,6 +158,7 @@ def Create_price_PO(source_name):
 		"schedule_date":today(),
 		"tax_category": "",
 		"status": "Draft",
+		"warehouse": warehouse or "",
 		"doctype": "Purchase Order",
 		"items": item,
 	}
@@ -162,3 +166,10 @@ def Create_price_PO(source_name):
 	).insert()
 
 	return po.name
+
+def get_warehouse(qi_ref):
+	#qi = frappe.db.get_value("Deductible Ratio", dr_doc, "qi_reference")
+	ci = frappe.db.get_value("Quality Inspection", qi_ref, "reference_name1")
+	wh = frappe.db.get_value("Collection Intimation", ci, "warehouse") if ci else ""
+	if wh:
+		return wh
