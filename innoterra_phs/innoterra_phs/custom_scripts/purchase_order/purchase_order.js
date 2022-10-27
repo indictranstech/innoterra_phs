@@ -23,6 +23,7 @@ frappe.ui.form.on('Purchase Order', {
     
     refresh(frm) {
         frm.trigger('get_supplier');
+        frm.set_df_property(["section_addresses","delivery_location"], "hidden", frm.doc.phs);
     },
     is_supplier(frm) {
         frm.trigger('get_supplier');
@@ -64,6 +65,13 @@ frappe.ui.form.on('Purchase Order', {
 				}
 			});
 		}
+    },
+    phs(frm)	{
+	if(!frm.doc.phs)	{
+		frm.set_df_property(["section_addresses","delivery_location"], "hidden", 0);
+	}	else	{
+		frm.set_df_property(["section_addresses","delivery_location"], "hidden", 1);
+	}
     },
      
     get_supplier(frm) {
