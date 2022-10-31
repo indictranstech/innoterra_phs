@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:village_name",
+ "creation": "2022-10-18 11:07:17.006725",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "village_name",
+  "taluka",
+  "district",
+  "state",
+  "cluster"
+ ],
+ "fields": [
+  {
+   "fieldname": "village_name",
+   "fieldtype": "Data",
+   "label": "Village Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "taluka",
+   "fieldtype": "Link",
+   "label": "Taluka",
+   "options": "Taluka"
+  },
+  {
+   "fetch_from": "taluka.district",
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District"
+  },
+  {
+   "fetch_from": "district.state",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fieldname": "cluster",
+   "fieldtype": "Link",
+   "label": "Cluster",
+   "options": "Territory"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-10-28 16:14:33.872896",
+ "modified_by": "Administrator",
+ "module": "Innoterra Phs",
+ "name": "Village",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
