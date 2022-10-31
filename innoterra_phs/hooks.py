@@ -207,7 +207,10 @@ doc_events = {
 	"before_save" : "innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.before_save_date"},
 	 "Warehouse" : {
 	 "after_insert" : "innoterra_phs.innoterra_phs.custom_scripts.warehouse.warehouse.fetch_address",
-	 "onload": "innoterra_phs.innoterra_phs.custom_scripts.warehouse.warehouse.onload"}
+	 "onload": "innoterra_phs.innoterra_phs.custom_scripts.warehouse.warehouse.onload"},
+	 "Customer" : {
+	 	"validate": "innoterra_phs.innoterra_phs.custom_scripts.customer.customer.validate"
+	 	}
 }
 
 
