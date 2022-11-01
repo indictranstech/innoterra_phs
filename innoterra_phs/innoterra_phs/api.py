@@ -29,6 +29,19 @@ def create_village_custom(data):
 		raise e
 
 @frappe.whitelist()
+def create_territory_custom(data):
+	try:
+		details = frappe.parse_json(data)
+		if frappe.db.exists("Territory", {'territory_name':details.get("territory_name")}):
+			return "Duplicate Name Error - Territory {0} already exists".format(details.get("territory_name"))
+		else:
+			doc = frappe.get_doc(details).insert()
+			frappe.local.response.update({"data": doc.as_dict()})
+			frappe.db.commit()
+	except Exception as e:
+		raise e
+
+@frappe.whitelist()
 def update_village(data):
 	try:
 		details = frappe.parse_json(data)
