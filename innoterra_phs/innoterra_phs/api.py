@@ -4,8 +4,8 @@ import frappe
 def create_farmer_custom(data):
 	try:
 		details = frappe.parse_json(data)
-		if frappe.db.exists("Customer", {'customer_name':details.get("customer_name")}):
-			return "Duplicate Name Error - Customer {0} already exists".format(details.get("customer_name"))
+		if details.get("mobile_no") and frappe.db.exists("Customer", {'mobile_no':details.get("mobile_no"), 'customer_name':details.get("customer_name")}):
+			return "Duplicate Error - Customer {0} with Mobile No {1} already exists".format(details.get("customer_name"), details.get("mobile_no"))
 		else:
 			details.update({'doctype':"Customer"})
 			doc = frappe.get_doc(details).insert()
