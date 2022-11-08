@@ -5,7 +5,7 @@ from frappe.utils import today
 
 # valid from date should not be past date 
 def validate_item_price(doc,method):
-	if doc.valid_from < nowdate():
+	if doc.docstatus!=1 and doc.valid_from < nowdate():
 		frappe.throw("Valid From should not be past date")
 
 
