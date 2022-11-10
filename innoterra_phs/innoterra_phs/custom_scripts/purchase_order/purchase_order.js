@@ -24,6 +24,9 @@ frappe.ui.form.on('Purchase Order', {
     refresh(frm) {
         frm.trigger('get_supplier');
         frm.set_df_property(["section_addresses","delivery_location"], "hidden", frm.doc.phs);
+        if(frm.doc.workflow_state=="Pending to Receive")	{
+        	frm.toggle_enable("items",0);
+        }
     },
     is_supplier(frm) {
         frm.trigger('get_supplier');
