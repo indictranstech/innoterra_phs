@@ -1,6 +1,9 @@
 frappe.ui.form.on('Item Price', {
 	refresh(frm) {
-		// your code here
+	if(!frm.doc.valid_from)	{
+		frm.set_value("valid_from", get_today());
+		frm.refresh_field("valid_from");
+	}
         frm.add_custom_button('Update Open PO', () => {
             frm.events.update_po(frm)
         })
