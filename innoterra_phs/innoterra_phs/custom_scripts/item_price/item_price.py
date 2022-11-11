@@ -10,6 +10,8 @@ def validate_item_price(doc,method):
 
 
 def before_save_date(doc,method):
+	if not doc.valid_from:
+		doc.valid_from = nowdate()
 	if not frappe.db.exists("Item Price",{'item_code':doc.item_code,'price_list':doc.price_list}):
 		return
 	else :
