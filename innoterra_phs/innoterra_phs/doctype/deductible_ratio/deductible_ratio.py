@@ -29,7 +29,7 @@ class DeductibleRatio(Document):
 			else :
 				if item.actual_quality_inspection < item.benchmark_value :
 					item.difference = flt(item.multiplier*(item.benchmark_value - item.actual_quality_inspection))
-					item.difference_qty = flt(item.benchmark_value - item.actual_quality_inspection)
+					item.difference_qty = flt(item.multiplier*(item.benchmark_value - item.actual_quality_inspection))
 
 				else :
 					item.difference = 0
@@ -46,6 +46,7 @@ class DeductibleRatio(Document):
 
 		self.offer_priced = self.agreed_price - (self.agreed_price * ans)
 		self.offer_qty = self.agreed_qty - (self.agreed_qty * per)
+		self.deduction_qty = self.agreed_qty - self.offer_qty
 		
 # adding item price into item price list 
 @frappe.whitelist()
