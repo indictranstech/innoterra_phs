@@ -25,24 +25,42 @@ def before_save_date(doc,method):
 
 @frappe.whitelist()
 def upate_po(item_code,name,sd,ed):
-	if ed == None or ed == "":
-		ed = today()
-
+	print(" this is 00000000 details", item_code,name,sd,ed)
 	item_price = frappe.get_doc("Item Price",name)
-	dd = frappe.db.sql(f""" 
-				select 
-				po.name poname
-				from `tabPurchase Order` po 
-				
-				left join `tabPurchase Order Item` poi on po.name = poi.parent
-				
-				where po.workflow_state = 'Pending to Receive'
-					and 
-					poi.item_code = '{item_code}'
-					and
-					po.transaction_date between '{sd}' and '{ed}' 
-		""",as_dict=1) 
+	dd = []
+	if ed == None or ed == "":
+		print(" no Valid Upto date given ..........", item_code,name,sd,ed)
+		# ed = today()
+		dd = frappe.db.sql(f""" 
+					select 
+					po.name poname
+					from `tabPurchase Order` po 
+					
+					left join `tabPurchase Order Item` poi on po.name = poi.parent
+					
+					where po.workflow_state = 'Pending to Receive'
+						and 
+						poi.item_code = '{item_code}'
+						and
+						po.transaction_date <= '{sd}'  
+					""",as_dict=1) 
+
 		
+	else:
+		dd = frappe.db.sql(f""" 
+					select 
+					po.name poname
+					from `tabPurchase Order` po 
+					
+					left join `tabPurchase Order Item` poi on po.name = poi.parent
+					
+					where po.workflow_state = 'Pending to Receive'
+						and 
+						poi.item_code = '{item_code}'
+						and
+						po.transaction_date between '{sd}' and '{ed}' 
+					""",as_dict=1) 
+	print(" this is type of dddddddddd", type(dd), len(dd))	
 	for i in dd:
 		po = frappe.get_doc("Purchase Order",i['poname'])
 		for j in po.items:
