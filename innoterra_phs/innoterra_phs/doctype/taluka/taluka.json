@@ -1,7 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
- "autoname": "format:{taluka_name}",
+ "autoname": "TL.#####",
  "creation": "2022-10-18 11:05:32.986631",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -33,7 +32,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-10-31 16:52:18.945036",
+ "modified": "2022-11-18 12:15:16.384126",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Taluka",
@@ -52,6 +51,7 @@
    "write": 1
   }
  ],
+ "search_fields": "taluka_name",
  "sort_field": "modified",
  "sort_order": "DESC"
 }

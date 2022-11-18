@@ -46,6 +46,8 @@ class DeductibleRatio(Document):
 
 		self.offer_priced = self.agreed_price - (self.agreed_price * ans)
 		self.offer_qty = self.agreed_qty - (self.agreed_qty * per)
+
+		self.deduction_amount = self.agreed_price - self.offer_priced
 		self.deduction_qty = self.agreed_qty - self.offer_qty
 		
 # adding item price into item price list 

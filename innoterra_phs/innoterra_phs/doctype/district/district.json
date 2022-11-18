@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "DT.-.#####",
+ "autoname": "DT.#####",
  "creation": "2022-10-18 10:45:09.437158",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -15,8 +15,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "District Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "state",
@@ -29,7 +28,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-16 13:41:02.737373",
+ "modified": "2022-11-18 12:18:38.172757",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "District",
@@ -48,6 +47,7 @@
    "write": 1
   }
  ],
+ "search_fields": "district_name",
  "sort_field": "modified",
  "sort_order": "DESC"
 }
