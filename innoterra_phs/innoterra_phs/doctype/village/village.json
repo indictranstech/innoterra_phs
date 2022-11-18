@@ -11,7 +11,7 @@
   "taluka",
   "district",
   "state",
-  "column_break_4",
+  "column_break_4_",
   "taluka_name1",
   "district_name1",
   "state_name1",
@@ -54,10 +54,6 @@
    "options": "Territory"
   },
   {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_6",
    "fieldtype": "Column Break"
   },
@@ -85,11 +81,15 @@
    "fieldtype": "Data",
    "label": "State Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4_",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-18 18:33:10.071029",
+ "modified": "2022-11-18 19:03:39.352898",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Village",
