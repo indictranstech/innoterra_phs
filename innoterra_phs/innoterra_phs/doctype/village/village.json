@@ -7,14 +7,14 @@
  "engine": "InnoDB",
  "field_order": [
   "village_name",
-  "section_break_2",
+  "section_break_2_",
   "taluka",
   "district",
   "state",
   "column_break_4",
-  "taluka_name",
-  "district_name",
-  "state_name",
+  "taluka_name1",
+  "district_name1",
+  "state_name1",
   "column_break_6",
   "cluster"
  ],
@@ -62,34 +62,34 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "state.state_name",
-   "fieldname": "state_name",
-   "fieldtype": "Data",
-   "label": "State Name",
-   "read_only": 1
-  },
-  {
-   "fetch_from": "district.district_name",
-   "fieldname": "district_name",
-   "fieldtype": "Data",
-   "label": "District Name",
-   "read_only": 1
+   "fieldname": "section_break_2_",
+   "fieldtype": "Section Break"
   },
   {
    "fetch_from": "taluka.taluka_name",
-   "fieldname": "taluka_name",
+   "fieldname": "taluka_name1",
    "fieldtype": "Data",
    "label": "Taluka Name",
    "read_only": 1
   },
   {
-   "fieldname": "section_break_2",
-   "fieldtype": "Section Break"
+   "fetch_from": "district.district_name",
+   "fieldname": "district_name1",
+   "fieldtype": "Data",
+   "label": "District Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "state.state_name",
+   "fieldname": "state_name1",
+   "fieldtype": "Data",
+   "label": "State Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-18 12:14:08.807324",
+ "modified": "2022-11-18 18:33:10.071029",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Village",

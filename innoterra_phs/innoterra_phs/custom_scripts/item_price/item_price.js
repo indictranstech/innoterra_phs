@@ -17,6 +17,7 @@ frappe.ui.form.on('Item Price', {
 
         // }
         console.log(" this is dates ", frm.doc.valid_from , frm.doc.valid_upto)
+        if(frm.doc.valid_from && !frm.doc.valid_upto){
         frappe.call({
                 "method":"innoterra_phs.innoterra_phs.custom_scripts.item_price.item_price.upate_po",
                 "args":{
@@ -34,7 +35,7 @@ frappe.ui.form.on('Item Price', {
                 }
 
             })
-
+        }    
      }
 
 
