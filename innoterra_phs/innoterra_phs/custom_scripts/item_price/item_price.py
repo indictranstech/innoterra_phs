@@ -25,11 +25,9 @@ def before_save_date(doc,method):
 
 @frappe.whitelist()
 def upate_po(item_code,name,sd,ed):
-	print(" this is 00000000 details", item_code,name,sd,ed)
 	item_price = frappe.get_doc("Item Price",name)
 	dd = []
 	if ed == None or ed == "":
-		print(" no Valid Upto date given ..........", item_code,name,sd,ed)
 		# ed = today()
 		dd = frappe.db.sql(f""" 
 					select 
@@ -60,7 +58,6 @@ def upate_po(item_code,name,sd,ed):
 						and
 						po.transaction_date between '{sd}' and '{ed}' 
 					""",as_dict=1) 
-	print(" this is type of dddddddddd", type(dd), len(dd))	
 	for i in dd:
 		po = frappe.get_doc("Purchase Order",i['poname'])
 		for j in po.items:
@@ -69,9 +66,25 @@ def upate_po(item_code,name,sd,ed):
 				j.rate = item_price.price_list_rate
 				j.base_rate = item_price.price_list_rate
 				j.net_rate = item_price.price_list_rate
-		po.save()
+		po.save(ignore_permissions=True)
 		frappe.db.commit()
-	return 'done'
+
+	if len(dd)>0:
+		old_ip = frappe.db.get_list('Item Price', filters={
+				'item_code': item_price.item_code,
+				'valid_from': ['<', item_price.valid_from],
+				'creation': ['<', item_price.creation],
+				
+				
+			},order_by= 'valid_from desc',
+			limit_page_length=1)
+	
+		if old_ip:
+			old_doc = frappe.get_doc("Item Price", old_ip[0].get("name"))
+			old_doc.valid_upto = sd
+			old_doc.save(ignore_permissions=True)
+	
+		return len(dd)
 
 
 	  

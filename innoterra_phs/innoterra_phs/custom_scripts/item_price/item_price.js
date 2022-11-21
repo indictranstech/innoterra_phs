@@ -8,6 +8,10 @@ frappe.ui.form.on('Item Price', {
             frm.events.update_po(frm)
         })
 
+        if(frm.doc.valid_upto){
+            frm.set_df_property("valid_upto", "read_only", 1)
+            frm.refresh_field("valid_upto")
+        }
 
 	},
     update_po : function(frm) {
@@ -27,17 +31,12 @@ frappe.ui.form.on('Item Price', {
                      "ed":frm.doc.valid_upto || ""
                     },
                 callback:function(r){
-                    // if(!r.exc) {
-                        if(r.message) {
-                            frappe.msgprint("Purchase Order is Updated");
+                    if(r.message > 0) {
+                        frappe.msgprint(__(" {0} Purchase Order is Updated", [r.message]));
                     }
-               // }
                 }
 
             })
         }    
-     }
-
-
-
+    },
 })
