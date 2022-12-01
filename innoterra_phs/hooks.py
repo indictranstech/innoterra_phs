@@ -210,6 +210,9 @@ doc_events = {
 	 "onload": "innoterra_phs.innoterra_phs.custom_scripts.warehouse.warehouse.onload"},
 	 "Customer" : {
 	 	"validate": "innoterra_phs.innoterra_phs.custom_scripts.customer.customer.validate"
+	 	},
+	"Supplier" : {
+	 	"validate": "innoterra_phs.innoterra_phs.custom_scripts.supplier.supplier.validate"
 	 	}
 }
 
