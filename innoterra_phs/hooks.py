@@ -195,7 +195,9 @@ doctype_js = {
 	"Sales Order": "innoterra_phs/custom_scripts/sales_order/sales_order.js",
 	"Item Price": "innoterra_phs/custom_scripts/item_price/item_price.js",
 	"Supplier": "innoterra_phs/custom_scripts/supplier/supplier.js",
-	"Address": "innoterra_phs/custom_scripts/address/address.js"
+	"Address": "innoterra_phs/custom_scripts/address/address.js",
+	"Sales Invoice": "innoterra_phs/custom_scripts/sales_invoice/sales_invoice.js",
+	"Pick List": "innoterra_phs/custom_scripts/pick_list/pick_list.js"
 }
 
 
