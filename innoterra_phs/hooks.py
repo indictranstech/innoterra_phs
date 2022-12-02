@@ -132,9 +132,9 @@ app_license = "MIT"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "innoterra_phs.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.selling.doctype.sales_order.sales_order.create_pick_list": "innoterra_phs.innoterra_phs.custom_scripts.pick_list.pick_list.create_pick_list"
+	}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -215,6 +215,9 @@ doc_events = {
 	 	},
 	"Supplier" : {
 	 	"validate": "innoterra_phs.innoterra_phs.custom_scripts.supplier.supplier.validate"
+	 	},
+	"Contact" : {
+	 	"validate": "innoterra_phs.innoterra_phs.custom_scripts.contact.contact.validate"
 	 	}
 }
 

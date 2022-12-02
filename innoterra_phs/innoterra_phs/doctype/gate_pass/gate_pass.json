@@ -108,7 +108,7 @@
   },
   {
    "fieldname": "driver_license_number",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Driver License Number"
   },
   {
@@ -125,7 +125,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-06-07 09:50:13.664082",
+ "modified": "2022-12-02 15:07:55.566186",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Gate Pass",
