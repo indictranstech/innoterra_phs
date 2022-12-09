@@ -7,7 +7,7 @@ from frappe.model.document import Document
 class Village(Document):
 	
 	def validate(self, method=None):
-		if frappe.db.exists("Village", {'village_name':self.village_name, 'taluka':self.taluka, 'district':self.district, 'state':self.state}):
+		if frappe.db.exists("Village", {'village_name':self.village_name, 'taluka':self.taluka, 'district':self.district, 'state':self.state, 'cluster':self.cluster}) or (not self.cluster and frappe.db.exists("Village", {'village_name':self.village_name, 'taluka':self.taluka, 'district':self.district, 'state':self.state})):
 			frappe.throw("Village already exists! (State-{0}, District-{1}, Taluka-{2}, Village-{3})".format(self.state, self.district, self.taluka, self.village_name))
 		if self.state and not frappe.db.exists("State", self.state):
 			frappe.throw("State {0} does not exist".format(self.state))
