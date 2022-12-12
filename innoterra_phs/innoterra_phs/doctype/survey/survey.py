@@ -7,19 +7,36 @@ from frappe.model.mapper import get_mapped_doc
 
 class Survey(Document):
 	def validate(self):
-		farmer_doc = frappe.get_doc("Supplier",self.name_of_farmer)
-		if not frappe.db.exists("Address",{'address_title':farmer_doc.supplier_name}):
+		add_line = frappe.get_list("Dynamic Link", {
+			"link_doctype": "Supplier",
+			"link_name": self.name_of_farmer,
+			"parenttype": "Address"
+		}, ["name", "parent"])
+
+		if add_line:
+			farmer_doc = frappe.get_doc("Address", add_line[0].get("parent"))
+		# farmer_doc = frappe.get_doc("Supplier",self.name_of_farmer)
+
+
+		# if not frappe.db.exists("Address",{'address_title':farmer_doc.supplier_name}):
+		# 	frappe.throw("Address not found for farmer {0}".format(self.name_of_farmer))
+		# address_doc = frappe.get_doc("Address",{'address_title':farmer_doc.supplier_name})
+			if farmer_doc:
+				address_doc = frappe.get_doc("Address", farmer_doc.name )
+
+				self.village = address_doc.village
+				self.tehsil = address_doc.taluka
+				self.district = address_doc.county
+				self.territory_name = address_doc.territory
+				if not address_doc.territory:
+					frappe.throw("Cluster is not set on farmer address.")
+				territory_doc = frappe.get_doc("Territory",address_doc.territory)
+				self.territory_no =  territory_doc.territory_number
+
+		else:
 			frappe.throw("Address not found for farmer {0}".format(self.name_of_farmer))
-		address_doc = frappe.get_doc("Address",{'address_title':farmer_doc.supplier_name})
-		self.village = address_doc.village
-		self.tehsil = address_doc.taluka
-		self.district = address_doc.county
-		self.territory_name = address_doc.territory
-		if not address_doc.territory:
-			frappe.throw("Cluster is not set on farmer address.")
-		territory_doc = frappe.get_doc("Territory",address_doc.territory)
-		self.territory_no =  territory_doc.territory_number
 		
+
 @frappe.whitelist()
 def make_harvest_intimation(source_name):
 	

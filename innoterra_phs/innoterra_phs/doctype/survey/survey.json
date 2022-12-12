@@ -42,7 +42,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Name of Farmer",
-   "options": "Supplier"
+   "options": "Supplier",
+   "reqd": 1
   },
   {
    "fetch_from": "name_of_farmer.father_name",
@@ -68,8 +69,7 @@
    "fetch_if_empty": 1,
    "fieldname": "address",
    "fieldtype": "Data",
-   "label": "Address",
-   "read_only": 1
+   "label": "Address"
   },
   {
    "fieldname": "village",
@@ -163,7 +163,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-18 10:35:01.765463",
+ "modified": "2022-12-12 16:13:12.332750",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Survey",
