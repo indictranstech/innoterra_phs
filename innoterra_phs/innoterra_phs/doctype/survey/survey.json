@@ -68,7 +68,7 @@
    "fetch_from": "name_of_farmer.primary_address",
    "fetch_if_empty": 1,
    "fieldname": "address",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Address"
   },
   {
@@ -163,7 +163,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-12 16:13:12.332750",
+ "modified": "2022-12-13 11:53:07.871304",
  "modified_by": "Administrator",
  "module": "Innoterra Phs",
  "name": "Survey",
