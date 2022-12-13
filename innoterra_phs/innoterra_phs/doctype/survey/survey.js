@@ -11,10 +11,13 @@ frappe.ui.form.on('Survey', {
 				})
 			});
 		}
-		// To check server update DEC 13 22 12.16
-		console.log(" this is for testing Purpose")
+	},
+
+	before_save: function(frm){
+		var newString = frm.doc.address.replace(/<br>/g, ' ');
+		frm.doc.address =  newString.replace(/[\r\n]/gm, " ")
 	}
-	
+
 });
 
 
