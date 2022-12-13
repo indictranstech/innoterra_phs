@@ -11,6 +11,8 @@ frappe.ui.form.on('Survey', {
 				})
 			});
 		}
+		// To check server update DEC 13 22 10.16
+		console.log(" this is for testing Purpose")
 	}
 	
 });
