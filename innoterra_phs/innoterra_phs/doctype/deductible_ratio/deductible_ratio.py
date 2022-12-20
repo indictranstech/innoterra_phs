@@ -20,7 +20,7 @@ class DeductibleRatio(Document):
 			if item.deductible_ratio_trigger == 'Greater Than':
 				if item.actual_quality_inspection > item.benchmark_value:
 					item.difference = flt(item.multiplier*(item.actual_quality_inspection - item.benchmark_value))
-					item.difference_qty = flt(item.actual_quality_inspection - item.benchmark_value)
+					item.difference_qty = flt(item.multiplier*(item.actual_quality_inspection - item.benchmark_value))
 
 				else :
 					item.difference = 0
